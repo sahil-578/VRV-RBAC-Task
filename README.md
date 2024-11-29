@@ -1,19 +1,35 @@
-# Role Based Access Control (...still in dev mode...)
+# VRV ASSESSMENT RBAC - UI 
 
-This is a Role Based Access Control application using Nodejs, Express, Passport Js, etc.
-You can use this application as the starting point for whatever project you are going to build which needs authentication and authorization.
+## **Project Overview**
 
-For authentication we have only Email & Password option but other authentication options using OAuth/OAuth2.0 like Google, Facebook, Apple, GitHub, etc, can be easily incorporated.
+This project implements a secure authentication and authorization system with **Role-Based Access Control (RBAC)**. It allows users to register, log in, and log out securely. Access to specific resources or endpoints is restricted based on the user’s assigned role (e.g., Admin, User, Moderator).
 
-The application is based on the **MVC pattern** i.e. Model View Controller.
-
-**Mongoose** is used as an ORM for MongoDB for storing Users in Database.
-
-**Passport JS** is used for local(email, password) authentication.
-
-The application is _almost_ **production ready**.
+We have utilized **Passport.js** for authentication, ensuring robust security and session management.
 
 ---
+
+## **Features**
+
+1. **Authentication**:
+   - Secure user registration and login using **Passport.js**.
+   - Passwords are hashed for secure storage in the database.
+   - Logout functionality to terminate user sessions.
+
+2. **Role-Based Access Control (RBAC)**:
+   - Users are assigned roles (Admin, User, Moderator).
+   - Specific resources and endpoints are protected based on user roles.
+   - Middleware ensures role-based authorization for accessing routes.
+
+3. **Technology Stack**:
+   - **EJS**: For server-side HTML rendering.
+   - **CSS**: For styling the front-end views.
+   - **Express.js**: For routing and handling HTTP requests.
+   - **Node.js**: As the runtime environment.
+   - **MongoDB**: For data storage, integrated via **Mongoose**.
+   - **Passport.js**: For secure session-based authentication.
+
+---
+
 
 ## To start setting up the project
 
@@ -35,32 +51,13 @@ Step 3: Put your credentials in the .env file.
 PORT=3000
 MONGODB_URI=YOUR_MONGODB_URI(example: mongodb://localhost:27017)
 DB_NAME=YOUR_DB_NAME
+SESSION_SECRET=YOUR_SESSION_SECRET_KEY
+ADMIN_EMAIL=YOUR_ADMIN_EMAIL
 ```
 
-Step 4: Install MongoDB (Linux Ubuntu)
-
-See <https://docs.mongodb.com/manual/installation/> for more infos
-
-Step 5: Run Mongo daemon
-
-```bash
-sudo service mongod start
-```
-
-Step 6: Start the app by
+Step 4: Start the app by
 
 ```bash
 npm start
 ```
 
-## Author
-
-- [**Truly Mittal**](https://trulymittal.com)
-
-## Contribute
-
-You can fork this repo and send me a PR.
-
-## License
-
-This project is licensed under the MIT License.
